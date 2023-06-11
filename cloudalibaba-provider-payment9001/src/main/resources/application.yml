@@ -1,0 +1,26 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+  # session 失效时间（分钟）
+  session:
+    timeout: 86400
+    store-type: redis
+  # redis 配置
+  redis:
+    port: 6379
+    host: 192.168.91.128
+    password: 1234
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
